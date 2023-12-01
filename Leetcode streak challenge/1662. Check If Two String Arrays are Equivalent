@@ -1,0 +1,15 @@
+class Solution {
+    public static String func(String word[]){
+        String s="";
+        for(int i=0;i<word.length;i++){
+            s+=word[i];
+        }
+        return s;
+    }
+    public boolean arrayStringsAreEqual(String[] word1, String[] word2) {
+        if(func(word1).equals(func(word2)))
+             return true;
+        else
+             return false;
+    }
+}
