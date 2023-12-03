@@ -1,0 +1,15 @@
+class Solution {
+    public int minTimeToVisitAllPoints(int[][] points) {
+        int r=points.length;
+        int ans=0,max=Integer.MIN_VALUE;
+
+        for(int i=0;i<r-1;i++){
+            int curX=points[i][0],curY=points[i][1];
+            int tarX=points[i+1][0],tarY=points[i+1][1];
+            max=Math.max(Math.abs(curX-tarX),Math.abs(curY-tarY));
+            ans+=max;
+        }
+
+        return ans;
+    }
+}
