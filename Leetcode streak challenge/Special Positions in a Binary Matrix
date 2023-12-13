@@ -1,0 +1,29 @@
+class Solution {
+    public boolean checkSpecial(int[][] mat,int i,int j){
+        for(int m=0;m<mat.length;m++){
+            if(m==i)
+              continue;
+            if(mat[m][j]==1)
+              return false;
+        }
+         for(int m=0;m<mat[0].length;m++){
+             if(m==j)
+              continue;
+            if(mat[i][m]==1)
+              return false;
+        }
+        return true;
+    }
+    public int numSpecial(int[][] mat) {
+        int count=0;
+        for(int i=0;i<mat.length;i++){
+            for(int j=0;j<mat[i].length;j++){
+                if(mat[i][j]==1){
+                    if(checkSpecial(mat,i,j))
+                      count++;
+                }
+            }
+        }
+        return count;
+    }
+}
