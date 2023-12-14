@@ -1,0 +1,33 @@
+ public int[][] onesMinusZeros(int[][] grid) {
+       int m=grid.length,n=grid[0].length;
+       int diff[][]=new int[m][n]; 
+       int r[]=new int[m];
+       int c[]=new int[n];
+       int c1=0;
+       for(int i=0;i<m;i++){
+           c1=0;
+           for(int j=0;j<n;j++){
+               if(grid[i][j]==1)
+                 c1++;
+           }
+           r[i]=c1;
+       }
+       
+       for(int i=0;i<n;i++){
+           c1=0;
+           for(int j=0;j<m;j++){
+               if(grid[j][i]==1)
+                 c1++;
+           }
+           c[i]=c1;
+       }
+
+
+       for(int i=0;i<m;i++){
+           for(int j=0;j<n;j++){
+               diff[i][j]=r[i]+c[j]-(m-r[i])-(n-c[j]);
+           }
+       }
+       return diff;
+    }
+}
