@@ -1,0 +1,16 @@
+class Solution {
+    public String destCity(List<List<String>> paths) {
+       HashSet<String> hash=new HashSet<>();
+       for(int i=0;i<paths.size();i++){
+           hash.add(paths.get(i).get(0));
+       }
+       String des="";
+       for(int i=0;i<paths.size();i++){
+           des=paths.get(i).get(1);
+           if(!hash.contains(des))
+              return des;
+       }
+
+    return " ";
+    } 
+}
